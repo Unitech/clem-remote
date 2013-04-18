@@ -78,6 +78,7 @@ def api():
 
             # Lets get the percentage we're at
             meta = getMeta(iface.GetMetadata())
+            print meta
             perc = (float(iface.PositionGet())/float(meta['mtime']))*100
             tr = getTracks()
             ws.send(json.dumps({'tag': 'bar', 'value': perc}))
